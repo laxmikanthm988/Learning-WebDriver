@@ -11,17 +11,19 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.support.ui.Select;
 
 public class LocatingMachanism {
-	
+
 	static WebDriver driver;
 
 	public static void main(String[] args) throws InterruptedException 
 	{
-//		Chrome();
-//		InternetExplorer();
-//		Firefox();
+		//		Chrome();
+		//		InternetExplorer();
+		//		Firefox();
 		byId();
-//		Test();
-		
+		//		Test();
+
+
+
 	}
 	public static void Chrome() 
 	{
@@ -37,7 +39,7 @@ public class LocatingMachanism {
 	{
 		WebDriver driver=new FirefoxDriver();
 	}
-	
+
 	public static void byId() throws InterruptedException
 	{
 		Chrome();
@@ -57,9 +59,9 @@ public class LocatingMachanism {
 		btnLogin.click();
 		Thread.sleep(5000);
 		driver.close();
-		
+
 	}
-	
+
 	public static void Test() throws InterruptedException 
 	{
 		Chrome();
@@ -70,7 +72,7 @@ public class LocatingMachanism {
 		txtUserId.sendKeys("nc395");
 		txtPassword.sendKeys("Dell@1234");
 		btnSubmit.click();
-		
+
 		//Selecting the WWID form the dropdown
 		Select oselect=new Select(driver.findElement(By.id("searchSelectId")));
 		oselect.selectByValue("wwid");		
@@ -81,12 +83,17 @@ public class LocatingMachanism {
 		WebElement btnSearch=driver.findElement(By.xpath(".//*[@id='homePage']/table/tbody/tr[1]/td[2]/table/tbody/tr[2]/td[4]/input"));
 		By.className("");
 		btnSearch.click();
-		
-		
+
+
 		Thread.sleep(5000);
 		driver.close();
 	}
 
-
+	public static void LocatingMechanisms() throws InterruptedException
+	{
+		Chrome();
+		driver.get("http://gmail.com/");
+		
+	}
 }
 
