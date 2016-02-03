@@ -19,8 +19,11 @@ public class LocatingMachanism {
 		//		Chrome();
 		//		InternetExplorer();
 		//		Firefox();
-		byId();
+		//		byId();
+
 		//		Test();
+
+//		LocatingMechanisms();
 
 
 
@@ -93,7 +96,39 @@ public class LocatingMachanism {
 	{
 		Chrome();
 		driver.get("http://gmail.com/");
+		WebElement UserId=driver.findElement(By.id("Email"));
+		UserId.sendKeys("laxmikanthm988@gmail.com");
+		WebElement next=driver.findElement(By.id("next"));
+		next.click();
+		Thread.sleep(5000);
+		WebElement password=driver.findElement(By.id("Passwd"));
+		password.sendKeys("mlk@LaxmiSathya1");
+
+		WebElement staySigned=driver.findElement(By.id("PersistentCookie"));
+		if(staySigned.isSelected())
+		{
+			staySigned.click();
+			System.out.println("Check box is selected");
+		}
+		else
+		{
+			System.out.println("Check Box is Not Selected");
+		}
+		WebElement signin=driver.findElement(By.id("signIn"));
+		signin.click();
+		Thread.sleep(10000);
 		
+		WebElement image=driver.findElement(By.className("gb_Za gbii"));
+		image.click();
+		
+		WebElement signout=driver.findElement(By.id("gb_71"));
+		signout.click();
+		
+		Thread.sleep(5000);
+		driver.close();
+
 	}
+
+	public static 
 }
 
