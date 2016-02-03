@@ -24,7 +24,7 @@ public class LocatingMachanism {
 		//		Test();
 
 //		LocatingMechanisms();
-
+		SindhuPalivela();
 
 
 	}
@@ -129,6 +129,74 @@ public class LocatingMachanism {
 
 	}
 
-	public static 
+	public static void SindhuPalivela() throws InterruptedException
+	{
+		Chrome();
+		driver.get("http://10.212.172.94:89/");
+		
+		WebElement userid=driver.findElement(By.id("UserID"));
+		userid.sendKeys("nw466");
+		WebElement password=driver.findElement(By.id("Password"));
+		password.sendKeys("abcd");
+		
+		WebElement submit=driver.findElement(By.id("button"));
+		submit.click();
+		
+		Thread.sleep(10000);
+		
+		WebElement xyz=driver.findElement(By.partialLinkText("XYZ"));
+		xyz.click();
+		
+		WebElement create=driver.findElement(By.id("imgCreateNew"));
+		create.click();
+		
+		WebElement txtname=driver.findElement(By.id("txtName"));
+		txtname.sendKeys("abc1260");
+		
+		WebElement btncreate=driver.findElement(By.id("btnNew"));
+		btncreate.click();
+		
+		Thread.sleep(10000);
+		driver.findElement(By.id("btnSelectEngine")).click();
+		
+		Thread.sleep(10000);
+		Select marketSelect=new Select(driver.findElement(By.id("BaseMarkets")));
+		marketSelect.selectByValue("1");
+		
+		Thread.sleep(10000);
+		Select equipmenttypeSelect=new Select(driver.findElement(By.id("Equipment")));
+		equipmenttypeSelect.selectByValue("167");
+		
+		Thread.sleep(5000);
+		WebElement btnSearch=driver.findElement(By.id("btnUpdate"));
+		btnSearch.click();
+		
+		Thread.sleep(10000);
+		WebElement firstelement=driver.findElement(By.xpath("html/body/div[1]/div/div[3]/div/div/div[8]/div[1]/div[2]/table/tbody/tr[1]/td[1]"));
+		firstelement.click();
+		
+		Thread.sleep(5000);
+		WebElement btnSaveSelection=driver.findElement(By.id("btnSave"));
+		btnSaveSelection.click();
+		
+		Thread.sleep(10000);
+		WebElement chkimageonly=driver.findElement(By.id("chkImagesOnly"));
+		chkimageonly.click();
+		
+		Thread.sleep(10000);
+		WebElement btnSave=driver.findElement(By.id("btnSaveUpper"));
+		btnSave.click();
+		
+		Thread.sleep(5000);
+		WebElement signout= driver.findElement(By.partialLinkText("Sign Out"));
+		signout.click();
+		
+		Thread.sleep(5000);
+		
+		System.out.println("It's done");
+		driver.close();
+		
+		
+	}
 }
 
