@@ -1,6 +1,8 @@
 package com.Chapter1;
+import java.io.File;
+import java.io.IOException;
 
-import java.sql.Driver;
+import javax.imageio.stream.FileCacheImageOutputStream;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -8,41 +10,52 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.io.FileHandler;
+import org.openqa.selenium.io.TemporaryFilesystem;
+import org.openqa.selenium.io.Zip;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
+import org.openqa.selenium.support.events.WebDriverEventListener;
 import org.openqa.selenium.support.ui.Select;
 
 public class LocatingMachanism {
 
 	static WebDriver driver;
 
-	public static void main(String[] args) throws InterruptedException 
+	public static void main(String[] args) throws InterruptedException,IOException
 	{
 		//		Chrome();
 		//		InternetExplorer();
 		//		Firefox();
 		//		byId();
-
 		//		Test();
-
-//		LocatingMechanisms();
-		SindhuPalivela();
+		//		LocatingMechanisms();
+		//		SindhuPalivela();
+		//		eventListener();
+		FileCopyFromSrcToDest();
 
 
 	}
 	public static void Chrome() 
 	{
-		System.setProperty("webdriver.chrome.driver","D:\\Laxmikanth\\Personnal\\Softwares\\chromedriver_win32\\chromedriver.exe");
+		//@office
+		//System.setProperty("webdriver.chrome.driver","D:\\Laxmikanth\\Personnal\\Softwares\\chromedriver_win32\\chromedriver.exe");
+		//@Home
+		System.setProperty("webdriver.chrome.driver","E:\\Laxmikanth\\Workspace\\Selenium WebDriver Packages\\chromedriver.exe");
 		driver=new ChromeDriver();
 	}
 	public static void InternetExplorer() throws InterruptedException
 	{
 		System.setProperty("webdriver.ie.driver", "D:\\Laxmikanth\\Personnal\\Softwares\\IEDriverServer_Win32_2.49.0\\IEDriverServer.exe");
+		driver=new InternetExplorerDriver();
 	}
 	public static void Firefox() throws InterruptedException
-
 	{
-		WebDriver driver=new FirefoxDriver();
+		driver=new FirefoxDriver();
 	}
+	public static void logFile()
+	{
 
+	}
 	public static void byId() throws InterruptedException
 	{
 		Chrome();
@@ -96,6 +109,7 @@ public class LocatingMachanism {
 	{
 		Chrome();
 		driver.get("http://gmail.com/");
+		driver.manage().window().maximize();
 		WebElement UserId=driver.findElement(By.id("Email"));
 		UserId.sendKeys("laxmikanthm988@gmail.com");
 		WebElement next=driver.findElement(By.id("next"));
@@ -117,13 +131,13 @@ public class LocatingMachanism {
 		WebElement signin=driver.findElement(By.id("signIn"));
 		signin.click();
 		Thread.sleep(10000);
-		
-		WebElement image=driver.findElement(By.className("gb_Za gbii"));
+
+		WebElement image=driver.findElement(By.xpath("/html/body/div[7]/div[3]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[2]/div[4]/div[1]/a/span"));
 		image.click();
-		
+		Thread.sleep(5000);
 		WebElement signout=driver.findElement(By.id("gb_71"));
 		signout.click();
-		
+		Thread.sleep(5000);
 		Thread.sleep(5000);
 		driver.close();
 
@@ -133,70 +147,183 @@ public class LocatingMachanism {
 	{
 		Chrome();
 		driver.get("http://10.212.172.94:89/");
-		
+
 		WebElement userid=driver.findElement(By.id("UserID"));
 		userid.sendKeys("nw466");
 		WebElement password=driver.findElement(By.id("Password"));
 		password.sendKeys("abcd");
-		
+
 		WebElement submit=driver.findElement(By.id("button"));
 		submit.click();
-		
+
 		Thread.sleep(10000);
-		
+
 		WebElement xyz=driver.findElement(By.partialLinkText("XYZ"));
 		xyz.click();
-		
+
 		WebElement create=driver.findElement(By.id("imgCreateNew"));
 		create.click();
-		
+
 		WebElement txtname=driver.findElement(By.id("txtName"));
 		txtname.sendKeys("abc1260");
-		
+
 		WebElement btncreate=driver.findElement(By.id("btnNew"));
 		btncreate.click();
-		
+
 		Thread.sleep(10000);
 		driver.findElement(By.id("btnSelectEngine")).click();
-		
+
 		Thread.sleep(10000);
 		Select marketSelect=new Select(driver.findElement(By.id("BaseMarkets")));
 		marketSelect.selectByValue("1");
-		
+
 		Thread.sleep(10000);
 		Select equipmenttypeSelect=new Select(driver.findElement(By.id("Equipment")));
 		equipmenttypeSelect.selectByValue("167");
-		
+
 		Thread.sleep(5000);
 		WebElement btnSearch=driver.findElement(By.id("btnUpdate"));
 		btnSearch.click();
-		
+
 		Thread.sleep(10000);
 		WebElement firstelement=driver.findElement(By.xpath("html/body/div[1]/div/div[3]/div/div/div[8]/div[1]/div[2]/table/tbody/tr[1]/td[1]"));
 		firstelement.click();
-		
+
 		Thread.sleep(5000);
 		WebElement btnSaveSelection=driver.findElement(By.id("btnSave"));
 		btnSaveSelection.click();
-		
+
 		Thread.sleep(10000);
 		WebElement chkimageonly=driver.findElement(By.id("chkImagesOnly"));
 		chkimageonly.click();
-		
+
 		Thread.sleep(10000);
 		WebElement btnSave=driver.findElement(By.id("btnSaveUpper"));
 		btnSave.click();
-		
+
 		Thread.sleep(5000);
 		WebElement signout= driver.findElement(By.partialLinkText("Sign Out"));
 		signout.click();
-		
+
 		Thread.sleep(5000);
-		
+
 		System.out.println("It's done");
 		driver.close();
-		
-		
+	}
+
+	public static void eventListener()
+	{
+		System.setProperty("webdriver.chrome.driver","E:\\Laxmikanth\\Workspace\\Selenium WebDriver Packages\\chromedriver.exe");
+		driver=new ChromeDriver();
+		EventFiringWebDriver eventfir=new EventFiringWebDriver(driver);
+		IAmEventListener listner=new IAmEventListener();
+		eventfir.register(listner);
+		eventfir.navigate().to("https://google.co.in");
+		eventfir.findElement(By.id("lst-ib")).sendKeys("Hello Laxmikanth");;
+	}
+	public static void FileCopyFromSrcToDest() throws IOException,InterruptedException
+	{
+		//Copying files from source to destination
+		//FileHandler.copy(new File("E:\\Temp1\\"),new File("E:\\Temp2\\"),".txt");
+		//Creating Directory in a specified Directory
+//		FileHandler.createDir(new File("E://Temporary"));
+//		Thread.sleep(10000);
+//		FileHandler.delete(new File("E://Temporary"));
+		//Verifying Whether the target File is in Zip Format or not
+//		System.out.println(FileHandler.isZipped("E://TempZip.zip"));
+		//Verifying whether can we make target File as Executable
+//		System.out.println(FileHandler.makeExecutable(new File("E://Temp2//Mlk.txt")));
+		//Verifying whether can we make target File as Writable
+//		System.out.println(FileHandler.makeWritable(new File("E://Temp2//Mlk.txt")));
+		//Reading Content from a target File
+//		System.out.println(FileHandler.readAsString(new File("E://Temp2//Mlk.txt")));
+		//Verifying whether the target file is having executable permissions
+//		System.out.println(FileHandler.canExecute(new File("E://Temp2//Mlk.txt")));
+		//Creating Temporary Directories in Default TempFolder
+		/*File f=TemporaryFilesystem.getDefaultTmpFS().createTempDir("prefix1","suffix1");
+		System.out.println(f.getAbsolutePath());
+		File f1=TemporaryFilesystem.getDefaultTmpFS().createTempDir("prefix1","suffix1");
+		System.out.println(f1.getAbsolutePath());
+		Thread.sleep(5000);
+		TemporaryFilesystem.getDefaultTmpFS().deleteTemporaryFiles();
+		Thread.sleep(10000);*/
+		/*//Changing Default Temporary File System
+		TemporaryFilesystem.setTemporaryDirectory(new File("E://Temp123"));
+		File f2=TemporaryFilesystem.getDefaultTmpFS().createTempDir("prefix1", "suffix1");
+		System.out.println(f2.getAbsolutePath());
+		Thread.sleep(10000);*/
+		/*//Changing Default Temporary File System
+		TemporaryFilesystem tmpfs=TemporaryFilesystem.getTmpFsBasedOn(new File("E://Temp456"));
+		tmpfs.createTempDir("prefix123","Suffix123");
+		Thread.sleep(10000);*/
+		/*//Zipping the file
+		Zip myZip=new Zip();
+		myZip.zip(new File("E://Temp456"), new File("E://Temp456.zip"));*/
+		/*//Unzipping the file
+		Zip myZip=new Zip();
+		myZip.unzip(new File("E://Temp456.zip"),new File("E://"));*/
 	}
 }
-
+class IAmEventListener implements WebDriverEventListener
+{
+	@Override
+	public void afterChangeValueOf(WebElement arg0, WebDriver arg1) {
+		System.out.println("afterChnageValueOf");
+	}
+	@Override
+	public void afterClickOn(WebElement arg0, WebDriver arg1) {
+		System.out.println("afterClickOn");
+	}
+	@Override
+	public void afterFindBy(By arg0, WebElement arg1, WebDriver arg2) {
+		System.out.println("afterFindBy");
+	}
+	@Override
+	public void afterNavigateBack(WebDriver arg0) {
+		System.out.println("afterNavigateBack");
+	}
+	@Override
+	public void afterNavigateForward(WebDriver arg0) {
+		System.out.println("afterNavigateForward");
+	}
+	@Override
+	public void afterNavigateTo(String arg0, WebDriver arg1) {
+		System.out.println("afterNavigateTo");
+	}
+	@Override
+	public void afterScript(String arg0, WebDriver arg1) {
+		System.out.println("afterScript");
+	}
+	@Override
+	public void beforeChangeValueOf(WebElement arg0, WebDriver arg1) {
+		System.out.println("beforeChangeValueOf");
+	}
+	@Override
+	public void beforeClickOn(WebElement arg0, WebDriver arg1) {
+		System.out.println("beforeClickOn");
+	}
+	@Override
+	public void beforeFindBy(By arg0, WebElement arg1, WebDriver arg2) {
+		System.out.println("beforeFindBy");
+	}
+	@Override
+	public void beforeNavigateBack(WebDriver arg0) {
+		System.out.println("beforeNavigateBack");
+	}
+	@Override
+	public void beforeNavigateForward(WebDriver arg0) {
+		System.out.println("beforeNavigateForward");
+	}
+	@Override
+	public void beforeNavigateTo(String arg0, WebDriver arg1) {
+		System.out.println("Driver::"+arg1+" is navigating to::"+arg0);
+	}
+	@Override
+	public void beforeScript(String arg0, WebDriver arg1) {
+		System.out.println("beforeScript");
+	}
+	@Override
+	public void onException(Throwable arg0, WebDriver arg1) {
+		System.out.println("onExeption");
+	}
+}
