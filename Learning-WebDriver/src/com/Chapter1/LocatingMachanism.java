@@ -31,7 +31,7 @@ public class LocatingMachanism {
 		//		LocatingMechanisms();
 		//		SindhuPalivela();
 		//		eventListener();
-		FileCopyFromSrcToDest();
+//		FileCopyFromSrcToDest();
 
 
 	}
@@ -263,6 +263,7 @@ public class LocatingMachanism {
 		Zip myZip=new Zip();
 		myZip.unzip(new File("E://Temp456.zip"),new File("E://"));*/
 	}
+	
 }
 class IAmEventListener implements WebDriverEventListener
 {
