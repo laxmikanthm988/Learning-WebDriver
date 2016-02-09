@@ -20,6 +20,7 @@ import org.openqa.selenium.support.ui.Select;
 import jxl.Sheet;
 import jxl.Workbook;
 import jxl.read.biff.BiffException;
+import jxl.write.WritableWorkbook;
 
 public class LocatingMachanism {
 
@@ -269,7 +270,7 @@ public class LocatingMachanism {
 	}
 	public static void readExcel() throws IOException, BiffException
 	{
-		
+		/*//Retrieving the data from excel
 		Workbook wbook=Workbook.getWorkbook(new File("Selenium_InputData.xls"));
 		Sheet sheet=wbook.getSheet("Sheet1");
 		int rowcount=sheet.getRows();
@@ -277,7 +278,12 @@ public class LocatingMachanism {
 		{
 			System.out.println(sheet.getCell(0,i).getContents()+" "+sheet.getCell(1,i).getContents()+" "+sheet.getCell(2, i).getContents());
 			System.out.println("\n");
-		}
+		}*/
+		//Writing into the excel
+		WritableWorkbook wbook1=Workbook.createWorkbook(new File("D:\\201602090550.xls"));
+		Sheet sheet1=wbook1.createSheet("Sheet1",2);
+		
+		
 	}
 	
 }
