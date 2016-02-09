@@ -17,11 +17,15 @@ import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.events.WebDriverEventListener;
 import org.openqa.selenium.support.ui.Select;
 
+import jxl.Sheet;
+import jxl.Workbook;
+import jxl.read.biff.BiffException;
+
 public class LocatingMachanism {
 
 	static WebDriver driver;
 
-	public static void main(String[] args) throws InterruptedException,IOException
+	public static void main(String[] args) throws InterruptedException,IOException, BiffException
 	{
 		//		Chrome();
 		//		InternetExplorer();
@@ -31,8 +35,8 @@ public class LocatingMachanism {
 		//		LocatingMechanisms();
 		//		SindhuPalivela();
 		//		eventListener();
-//		FileCopyFromSrcToDest();
-
+		//		FileCopyFromSrcToDest();
+				readExcel();
 
 	}
 	public static void Chrome() 
@@ -262,6 +266,18 @@ public class LocatingMachanism {
 		/*//Unzipping the file
 		Zip myZip=new Zip();
 		myZip.unzip(new File("E://Temp456.zip"),new File("E://"));*/
+	}
+	public static void readExcel() throws IOException, BiffException
+	{
+		
+		Workbook wbook=Workbook.getWorkbook(new File("Selenium_InputData.xls"));
+		Sheet sheet=wbook.getSheet("Sheet1");
+		int rowcount=sheet.getRows();
+		for(int i=0;i<rowcount;i++)
+		{
+			System.out.println(sheet.getCell(0,i).getContents()+" "+sheet.getCell(1,i).getContents()+" "+sheet.getCell(2, i).getContents());
+			System.out.println("\n");
+		}
 	}
 	
 }
