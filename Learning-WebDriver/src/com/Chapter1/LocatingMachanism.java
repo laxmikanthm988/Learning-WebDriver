@@ -4,7 +4,10 @@ import java.io.IOException;
 
 import javax.imageio.stream.FileCacheImageOutputStream;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -16,6 +19,7 @@ import org.openqa.selenium.io.Zip;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.events.WebDriverEventListener;
 import org.openqa.selenium.support.ui.Select;
+
 
 import jxl.Sheet;
 import jxl.Workbook;
@@ -31,21 +35,22 @@ public class LocatingMachanism {
 		//		Chrome();
 		//		InternetExplorer();
 		//		Firefox();
-		//		byId();
+//				byId();
 		//		Test();
 		//		LocatingMechanisms();
 		//		SindhuPalivela();
 		//		eventListener();
 		//		FileCopyFromSrcToDest();
-				readExcel();
+//				readExcel();
+				TestLog();
 
 	}
 	public static void Chrome() 
 	{
-		//@office
-		//System.setProperty("webdriver.chrome.driver","D:\\Laxmikanth\\Personnal\\Softwares\\chromedriver_win32\\chromedriver.exe");
+//		@office
+		System.setProperty("webdriver.chrome.driver","D:\\Laxmikanth\\Personnal\\Softwares\\chromedriver_win32\\chromedriver.exe");
 		//@Home
-		System.setProperty("webdriver.chrome.driver","E:\\Laxmikanth\\Workspace\\Selenium WebDriver Packages\\chromedriver.exe");
+//		System.setProperty("webdriver.chrome.driver","E:\\Laxmikanth\\Workspace\\Selenium WebDriver Packages\\chromedriver.exe");
 		driver=new ChromeDriver();
 	}
 	public static void InternetExplorer() throws InterruptedException
@@ -57,14 +62,24 @@ public class LocatingMachanism {
 	{
 		driver=new FirefoxDriver();
 	}
-	public static void logFile()
+	public static void logFile() throws IOException
 	{
+		File srcFile=((TakesScreenshot)driver).getScreenshotAs((OutputType.FILE));
+		FileUtils.copyFile(srcFile, new File("D:\\Temp\\laxmikanth.png"));
+		
 
 	}
-	public static void byId() throws InterruptedException
+	public static void TestLog() throws IOException
+	{
+		Chrome();
+		driver.get("https://www.google.co.in/?gws_rd=ssl");
+		logFile();
+	}
+	public static void byId() throws InterruptedException, IOException
 	{
 		Chrome();
 		driver.get("https://connect-stg.cummins.com");
+		logFile();
 		/*//Clicking on the Advanced Link for Security Reasons
 		WebElement lnkAdvanced=driver.findElement(By.partialLinkText("Advanced"));
 		//Clicking on Proceed link
@@ -79,6 +94,7 @@ public class LocatingMachanism {
 		WebElement btnLogin=driver.findElement(By.xpath("html/body/div[1]/div[2]/div[1]/form/div[1]/input"));
 		btnLogin.click();
 		Thread.sleep(5000);
+		logFile();
 		driver.close();
 
 	}
