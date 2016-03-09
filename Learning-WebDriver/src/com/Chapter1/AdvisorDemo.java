@@ -246,21 +246,22 @@ public class AdvisorDemo {
 	}
 	public void ReadFromExcel() throws InvalidFormatException, IOException
 	{
-		XSSFWorkbook workbook=new XSSFWorkbook(new File("C:\\Users\\laxmikanth_maram\\git\\Learning-WebDriver\\Learning-WebDriver\\DataSheet.xlsx"));
+		//@Office
+		/*XSSFWorkbook workbook=new XSSFWorkbook(new File("DataSheet.xlsx"));
 		XSSFSheet sheet=workbook.getSheetAt(0);
 		XSSFRow row=sheet.getRow(1);
 		System.out.println(row.getCell(0));
-		
-		
 		System.out.println(sheet.getSheetName());
-		workbook.close();
+		*/
+		//@Home
+		XSSFWorkbook workbook=new XSSFWorkbook("DataSheet.xlsx");
 		
 		
 		
 	}
 	public void WriteToExcel() throws InvalidFormatException, IOException
 	{
-		FileOutputStream fos=new FileOutputStream(new File("D:\\Lucky_"+getTimeStamp()+".xlsx"));
+		/*FileOutputStream fos=new FileOutputStream(new File("D:\\Lucky_"+getTimeStamp()+".xlsx"));
 		XSSFWorkbook workbook=new XSSFWorkbook();
 		XSSFSheet sheet1=workbook.createSheet("Test Result");
 		XSSFRow row=sheet1.createRow(0);
@@ -271,7 +272,7 @@ public class AdvisorDemo {
 		
 		workbook.write(fos);
 		workbook.close();
-		fos.close();
+		fos.close();*/
 		
 	}
 	public long getTimeStamp()

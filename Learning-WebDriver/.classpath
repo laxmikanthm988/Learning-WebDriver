@@ -119,6 +119,13 @@
 	<classpathentry kind="lib" path="E:/Softwares-New/JarFiles/Selenium-2.48.2/libs/xalan-2.7.2.jar"/>
 	<classpathentry kind="lib" path="E:/Softwares-New/JarFiles/Selenium-2.48.2/libs/xercesImpl-2.11.0.jar"/>
 	<classpathentry kind="lib" path="E:/Softwares-New/JarFiles/Selenium-2.48.2/libs/xml-apis-1.4.01.jar"/>
-	<classpathentry kind="lib" path="E:/Softwares-New/JarFiles/Selenium Excel Jar/poi-ooxml-3.9.jar"/>
+	<classpathentry kind="lib" path="E:/Softwares-New/JarFiles/Selenium Excel Jar/poi-3.14/poi-3.14-20160307.jar"/>
+	<classpathentry kind="lib" path="E:/Softwares-New/JarFiles/Selenium Excel Jar/poi-3.14/poi-examples-3.14-20160307.jar"/>
+	<classpathentry kind="lib" path="E:/Softwares-New/JarFiles/Selenium Excel Jar/poi-3.14/poi-excelant-3.14-20160307.jar"/>
+	<classpathentry kind="lib" path="E:/Softwares-New/JarFiles/Selenium Excel Jar/poi-3.14/poi-ooxml-3.14-20160307.jar"/>
+	<classpathentry kind="lib" path="E:/Softwares-New/JarFiles/Selenium Excel Jar/poi-3.14/poi-ooxml-schemas-3.14-20160307.jar"/>
+	<classpathentry kind="lib" path="E:/Softwares-New/JarFiles/Selenium Excel Jar/poi-3.14/poi-scratchpad-3.14-20160307.jar"/>
+	<classpathentry kind="lib" path="E:/Softwares-New/JarFiles/Selenium Excel Jar/poi-3.14/ooxml-lib/curvesapi-1.03.jar"/>
+	<classpathentry kind="lib" path="E:/Softwares-New/JarFiles/Selenium Excel Jar/poi-3.14/ooxml-lib/xmlbeans-2.6.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
