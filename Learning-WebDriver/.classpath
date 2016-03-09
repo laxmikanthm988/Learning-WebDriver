@@ -55,5 +55,17 @@
 	<classpathentry kind="lib" path="D:/Laxmikanth/Personnal/Softwares/selenium-java-2.49.0/selenium-2.49.0/selenium-java-2.49.0.jar"/>
 	<classpathentry kind="lib" path="D:/Laxmikanth/Personnal/Softwares/selenium-java-2.49.0/selenium-2.49.0/selenium-java-2.49.0-srcs.jar"/>
 	<classpathentry kind="lib" path="D:/Laxmikanth/Personnal/Softwares/jxl.jar/jxl.jar"/>
+	<classpathentry kind="lib" path="D:/Laxmikanth/Personnal/Softwares/Excel Jar-Selenium WebDriver/poi-3.14-20160307.jar"/>
+	<classpathentry kind="lib" path="D:/Laxmikanth/Personnal/Softwares/Excel Jar-Selenium WebDriver/poi-examples-3.14-20160307.jar"/>
+	<classpathentry kind="lib" path="D:/Laxmikanth/Personnal/Softwares/Excel Jar-Selenium WebDriver/poi-excelant-3.14-20160307.jar"/>
+	<classpathentry kind="lib" path="D:/Laxmikanth/Personnal/Softwares/Excel Jar-Selenium WebDriver/poi-ooxml-3.14-20160307.jar"/>
+	<classpathentry kind="lib" path="D:/Laxmikanth/Personnal/Softwares/Excel Jar-Selenium WebDriver/poi-ooxml-schemas-3.14-20160307.jar"/>
+	<classpathentry kind="lib" path="D:/Laxmikanth/Personnal/Softwares/Excel Jar-Selenium WebDriver/poi-scratchpad-3.14-20160307.jar"/>
+	<classpathentry kind="lib" path="D:/Laxmikanth/Personnal/Softwares/Excel Jar-Selenium WebDriver/ooxml-lib/curvesapi-1.03.jar"/>
+	<classpathentry kind="lib" path="D:/Laxmikanth/Personnal/Softwares/Excel Jar-Selenium WebDriver/ooxml-lib/xmlbeans-2.6.0.jar"/>
+	<classpathentry kind="lib" path="D:/Laxmikanth/Personnal/Softwares/Excel Jar-Selenium WebDriver/lib/commons-codec-1.10.jar"/>
+	<classpathentry kind="lib" path="D:/Laxmikanth/Personnal/Softwares/Excel Jar-Selenium WebDriver/lib/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="D:/Laxmikanth/Personnal/Softwares/Excel Jar-Selenium WebDriver/lib/junit-4.12.jar"/>
+	<classpathentry kind="lib" path="D:/Laxmikanth/Personnal/Softwares/Excel Jar-Selenium WebDriver/lib/log4j-1.2.17.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
