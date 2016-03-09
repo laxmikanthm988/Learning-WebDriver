@@ -9,6 +9,7 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -20,19 +21,10 @@ import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.events.WebDriverEventListener;
 import org.openqa.selenium.support.ui.Select;
 
-
-import jxl.Sheet;
-import jxl.Workbook;
-import jxl.read.biff.BiffException;
-import jxl.write.WritableWorkbook;
-
 public class LocatingMachanism {
 
 	static WebDriver driver;
-
-<<<<<<< HEAD
-=======
-	public static void main(String[] args) throws InterruptedException,IOException, BiffException
+	public static void main(String[] args) throws InterruptedException,IOException
 	{
 		//		Chrome();
 		//		InternetExplorer();
@@ -47,17 +39,13 @@ public class LocatingMachanism {
 				TestLog();
 
 	}
->>>>>>> branch 'master' of https://github.com/laxmikanthmaram/Learning-WebDriver.git
 	public static void Chrome() 
 	{
 //		@office
 		System.setProperty("webdriver.chrome.driver","D:\\Laxmikanth\\Personnal\\Softwares\\chromedriver_win32\\chromedriver.exe");
 		//@Home
-<<<<<<< HEAD
 		System.setProperty("webdriver.chrome.driver","E:\\Softwares-New\\Selenium WebDriver Packages\\chromedriver.exe");
-=======
 //		System.setProperty("webdriver.chrome.driver","E:\\Laxmikanth\\Workspace\\Selenium WebDriver Packages\\chromedriver.exe");
->>>>>>> branch 'master' of https://github.com/laxmikanthmaram/Learning-WebDriver.git
 		driver=new ChromeDriver();
 	}
 	public static void InternetExplorer() throws InterruptedException
@@ -69,13 +57,8 @@ public class LocatingMachanism {
 	{
 		driver=new FirefoxDriver();
 	}
-<<<<<<< HEAD
-	public static void main(String[] args) throws InterruptedException,IOException
-=======
 	public static void logFile() throws IOException
->>>>>>> branch 'master' of https://github.com/laxmikanthmaram/Learning-WebDriver.git
 	{
-<<<<<<< HEAD
 		//		Chrome();
 		//		InternetExplorer();
 		//		Firefox();
@@ -88,14 +71,11 @@ public class LocatingMachanism {
 //				readExcel();
 //		spokenEnglish();
 		ReadFromExcel();
-=======
 		File srcFile=((TakesScreenshot)driver).getScreenshotAs((OutputType.FILE));
 		FileUtils.copyFile(srcFile, new File("D:\\Temp\\laxmikanth.png"));
 		
->>>>>>> branch 'master' of https://github.com/laxmikanthmaram/Learning-WebDriver.git
 
 	}
-<<<<<<< HEAD
 	public static void ReadFromExcel() throws IOException
 	{
 		File src=new File("E:\\Lucky.xlsx");
@@ -128,8 +108,6 @@ public class LocatingMachanism {
 		
 //		System.out.println(links.getSize());
 	}*/
-	public static void byId() throws InterruptedException
-=======
 	public static void TestLog() throws IOException
 	{
 		Chrome();
@@ -137,7 +115,6 @@ public class LocatingMachanism {
 		logFile();
 	}
 	public static void byId() throws InterruptedException, IOException
->>>>>>> branch 'master' of https://github.com/laxmikanthmaram/Learning-WebDriver.git
 	{
 		Chrome();
 		driver.get("https://connect-stg.cummins.com");
